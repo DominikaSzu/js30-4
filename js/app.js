@@ -23,6 +23,17 @@ document.addEventListener('DOMContentLoaded', function(e) {
     
     console.log(result1);
     
+    // 2. Give us an array of the inventors' first and last names
+    
+    const result2 = inventors.map(inventor => {
+        delete inventor.year;
+        delete inventor.passed;
+        return inventor;
+    });
+    
+    console.log(result2);
+    
+    
     
     
     
