@@ -43,9 +43,18 @@ document.addEventListener('DOMContentLoaded', function(e) {
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
     // 5. Sort the inventors by years lived
+    
+     yearsLived = (a,b) => {
+        return (a.passed - a.year) - (b.passed - b.year);
+    };
+    
+    inventors.sort(yearsLived);
+    console.table(inventors);   
+    
+    
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
-
+    
     // 7. sort Exercise
     // Sort the people alphabetically by last name
     
