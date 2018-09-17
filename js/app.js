@@ -37,16 +37,24 @@ document.addEventListener('DOMContentLoaded', function(e) {
     }
     
     inventors.sort(compareDates);
-    console.table(inventors)
-    
     
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
-    // 5. Sort the inventors by years lived
+
+    yearsLivedSum = (acc, val) => {
+    val = (val.passed - val.year);    
+    acc += val
+    return acc;
+    };    
+
+    let result3 = inventors.reduce(yearsLivedSum, 0);
+    console.log(result3);
     
-     yearsLived = (a,b) => {
-        return (a.passed - a.year) - (b.passed - b.year);
-    };
+    // 5. Sort the inventors by years lived
+ 
+    yearsLived = (a, b) => {
+        return ((a.passed - a.year) - (b.passed - b.year));
+    }
     
     inventors.sort(yearsLived);
     console.table(inventors);   
